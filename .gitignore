@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Data
+data/*.db
+data/charts/*.png
+data/historical/
+
+# ML Models
+ml_models/saved/*.pkl
+ml_models/saved/*.pt
+
+# Logs
+logs/*.log
+logs/*.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+dashboard/frontend/node_modules/
+dashboard/frontend/build/
+dashboard/frontend/.next/
+
+# Distribution
+dist/
+build/
+*.egg-info/
