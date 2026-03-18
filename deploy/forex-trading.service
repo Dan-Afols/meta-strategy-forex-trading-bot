@@ -1,0 +1,35 @@
+[Unit]
+Description=Forex Trading System
+After=network.target postgresql.service
+Wants=network.target
+
+[Service]
+Type=simple
+User=trader
+Group=trader
+WorkingDirectory=/opt/trade_fx
+EnvironmentFile=/opt/trade_fx/.env
+ExecStart=/opt/trade_fx/venv/bin/python main.py
+Restart=always
+RestartSec=10
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/trade_fx/data /opt/trade_fx/logs /opt/trade_fx/ml_models/saved
+PrivateTmp=true
+
+# Resource limits
+MemoryMax=2G
+CPUQuota=200%
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=forex-trading
+
+[Install]
+WantedBy=multi-user.target
