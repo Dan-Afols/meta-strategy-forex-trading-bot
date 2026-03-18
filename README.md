@@ -1,4 +1,4 @@
-Forex Trading Bot — Complete Guide
+Meta Strategy Forex Trading Bot — Complete Guide
 
 ## Overview
 
